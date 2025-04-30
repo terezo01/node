@@ -41,7 +41,7 @@ app.post('/atualizar-carro', (req, res) =>{
 
     salvarDados();
 
-    res.send('<h1> carro atualizado com sucesso! </h1> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br><a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>');
+    res.send('<h1> carro atualizado com sucesso! </h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
 
 })
 
@@ -61,7 +61,7 @@ app.post('/adicionar-carro', (req, res) => {
 
     salvarDados();
 
-    res.send('<h1> carro adicionado com sucesso! </h1> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br><a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>');
+    res.send('<h1> carro adicionado com sucesso! </h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
 });
 
 function buscarcarroPorNome(nome) {
@@ -79,9 +79,9 @@ app.post('/buscar-carro', (req, res) => {
     const carroEncontrado = buscarcarroPorNome(nomeBuscado);
 
     if (carroEncontrado) {
-        res.send(`<h1>carro encontrado:</h1> <pre>${JSON.stringify(carroEncontrado, null, 2)}</pre> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a>`);
+        res.send(`<h1>carro encontrado:</h1> <pre>${JSON.stringify(carroEncontrado, null, 2)}</pre> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a>`);
     } else {
-        res.send('<h1>carro não encontrado.</h1> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br><a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>');
+        res.send('<h1>carro não encontrado.</h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
     }
 });
 
@@ -110,9 +110,9 @@ app.post('/categoria-carro', (req, res) => {
     const categoriascarros = buscarcarroPorCategoria(nomeCategoriaBuscada);
 
     if (categoriascarros !== "") {
-        res.send(`<h1>carros encontrados:</h1> <pre> ${categoriascarros} </pre> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br><a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>`);
+        res.send(`<h1>carros encontrados:</h1> <pre> ${categoriascarros} </pre> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>`);
     } else {
-        res.send('<h1>Nenhum carro encontrado.</h1> <br><a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br><a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br><a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br><a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>');
+        res.send('<h1>Nenhum carro encontrado.</h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
     }
 });
 
