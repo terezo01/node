@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar</title>
+</head>
+<body>
+    <h1>Buscar carro por categoria</h1>
+
+    <form action="http://localhost:3001/categoria-carro" method="post">
+        
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" name="categoria" required>
+
+        <button type="submit"> Filtrar </button>
+    </form>
+    <br>
+    <a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br>
+    <a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br>
+    <a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br>
+    <a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>
+
+
+</body>
+</html>

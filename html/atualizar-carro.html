@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Carro</title>
+</head>
+<body>
+    <h1>Atualizar carro</h1>
+    <form action="http://localhost:3001/atualizar-carro" method="post">
+        <label for="nome">Nome do carro:</label>
+        <input type="text" name="nome" id="nome" required></input><br>
+
+        <label for="novaCategoria">Nova Categoria:</label>
+        <input type="text" id="novaCategoria" name="novaCategoria" required><br>
+
+        <label for="novaDesc">Descrição:</label>
+        <input type="text" id="novaDesc" name="novaDesc" required><br>
+        
+        <label for="novaUrlFoto">Url da foto:</label>
+        <input type="text" id="novaUrlFoto" name="novaUrlFoto" required><br>
+
+        <button type="submit"> Atualizar carro</button>
+    </form>
+    <br>
+    <a href="http://localhost:3001/adicionar-carro">Adicionar carros</a><br>
+    <a href="http://localhost:3001/buscar-carro">Buscar por carros</a><br>
+    <a href="http://localhost:3001/categoria-carro">Buscar por Categoria</a><br>
+    <a href="http://localhost:3001/atualizar-carro">Atualizar cadastro</a>
+
+</body>
+</html>

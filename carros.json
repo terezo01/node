@@ -1,0 +1,20 @@
+[
+  {
+    "categoria": "Carro Velho",
+    "nome": "Tucker 1948",
+    "desc": "O Tucker foi realmente uma inovação no mundo do design automóvel, e embora o modelo 1948 foi o único modelo já produzido seu efeito sobre o mundo dos automóveis ainda pode ser sentida até hoje. Preston Tucker e Alex Tremulis projetou o Tucker como uma tentativa de entrar na indústria automotiva, e apesar de apenas um punhado de carros foram produzidos os recursos que estavam presentes naqueles carros eram extremamente inovador para a época.",
+    "urlFoto": "https://s2-autoesporte.glbimg.com/7uU5ohsmadKy9HtqqmQ3lefX4d0=/0x0:620x400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/1/r/dXdBHSQKG13utrXP6JeA/2016-12-13-tuckerfrente.jpg"
+  },
+  {
+    "categoria": "Carro Velho",
+    "nome": "Chevrolet Corvette",
+    "desc": "O Chevrolet corvette é também um clássico antigo, encontrado nos salões automobilísticos internacionais, ele foi o primeiro carro produzido inteiramente dos Estados Unidos. O modelo de 1958, pertencente à primeira geração do corvette é um dos mais conhecidos e era uma potência na época em que foi criado. Esse carro clássico chegava a 170 km/h e era bem leve, o que estava se tornando tendência quando ele começou a ser fabricado em 1953.",
+    "urlFoto": "https://s2-autoesporte.glbimg.com/Z0eGTO3a842SNL_PmYIpwg3NCWo=/0x0:1415x943/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2021/6/p/uPO6wBSO248WrfJTeDUg/corvette-1.jpg"
+  },
+  {
+    "nome": "Chevrolet Impala Coupe",
+    "desc": "um carro lindo",
+    "urlFoto": "sla",
+    "categoria": "Carro Velho"
+  }
+]
