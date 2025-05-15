@@ -64,6 +64,28 @@ app.post('/adicionar-carro', (req, res) => {
     res.send('<h1> carro adicionado com sucesso! </h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
 });
 
+
+app.get('/deletar-carro', (req, res) =>{
+    res.sendFile(path.join(__dirname, '/html/deletar-carro.html'));
+})
+
+app.post('/deletar-carro', (req, res) =>{
+    const{nome} = req.body;
+   
+    const carroIndex = carros.findIndex(carro => carro.nome.toLowerCase() === nome.toLowerCase());
+   
+    if(carroIndex === -1){
+        res.send('<h1>Carro não encontrado.<h1/>');
+        return;
+    }
+    else{
+        carros.splice(carroIndex, 1);
+        salvarDados();
+        res.send(`<h1>O carro ${nome} foi excluido<h1/>`);  
+    }
+   
+});
+
 function buscarcarroPorNome(nome) {
 
     return carros.find(carro => carro.nome.toLowerCase() === nome.toLowerCase());
