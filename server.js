@@ -88,7 +88,7 @@ app.post('/deletar-carro', (req, res) =>{
 
 function buscarcarroPorNome(nome) {
 
-    return carros.find(carro => carro.nome.toLowerCase() === nome.toLowerCase());
+    return carros.find(carro => carro.nome.toLowerCase() === nome.toLowerCase())
 }
 
 app.get('/buscar-carro', (req, res) =>{
@@ -101,7 +101,15 @@ app.post('/buscar-carro', (req, res) => {
     const carroEncontrado = buscarcarroPorNome(nomeBuscado);
 
     if (carroEncontrado) {
-        res.send(`<h1>carro encontrado:</h1> <pre>${JSON.stringify(carroEncontrado, null, 2)}</pre> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a>`);
+        const templatePath = path.join(__dirname, '/html/dados-carro.html');
+        const templateData = fs.readFileSync(templatePath, 'utf-8')
+        const html = templateData.replace(
+            '<div class="card-body"></div>', 
+            `<div class="card-body"><p class="cardtext"><strong>Nome:</strong>${carroEncontrado.nome}</p>
+            <p class="cardtext"><strong>Categoria:</strong>${carroEncontrado.categoria}</p>
+            <p class="cardtext"><strong>Descrição:</strong>${carroEncontrado.desc}</p> <br></div>`
+        );
+        res.send(html);
     } else {
         res.send('<h1>carro não encontrado.</h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
     }
@@ -114,7 +122,11 @@ function buscarcarroPorCategoria(categoria) {
 
     carros.forEach(carro => {
         if(carro.categoria.toLowerCase() === categoria.toLowerCase()){
-            categoriascarros += `${JSON.stringify(carro, null, 2)}\n`;
+            categoriascarros += 
+            `<p class="cardtext"><strong>Nome:</strong>${carro.nome}</p>
+            <p class="cardtext"><strong>Categoria:</strong>${carro.categoria}</p>
+            <p class="cardtext"><strong>Descrição:</strong>${carro.desc}</p> <br>`;
+        console.log(categoriascarros)
         }
     });
 
@@ -132,7 +144,14 @@ app.post('/categoria-carro', (req, res) => {
     const categoriascarros = buscarcarroPorCategoria(nomeCategoriaBuscada);
 
     if (categoriascarros !== "") {
-        res.send(`<h1>carros encontrados:</h1> <pre> ${categoriascarros} </pre> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>`);
+        const templatePath = path.join(__dirname, '/html/dados-carro.html');
+        const templateData = fs.readFileSync(templatePath, 'utf-8');
+        const html = templateData.replace(
+            '<div class="card-body"></div>', 
+            `<div class="card-body">${categoriascarros}</div>`
+          );
+        res.send(html);
+
     } else {
         res.send('<h1>Nenhum carro encontrado.</h1> <br><a href="/adicionar-carro">Adicionar carros</a><br><a href="/buscar-carro">Buscar por carros</a><br><a href="/categoria-carro">Buscar por Categoria</a><br><a href="/atualizar-carro">Atualizar cadastro</a>');
     }
