@@ -157,6 +157,29 @@ app.post('/categoria-carro', (req, res) => {
     }
 });
 
+app.get('/todos-tabela', (req, res) =>{
+    let carsTable = ''
+
+    carros.forEach(carro =>{
+        // const descricaoTruncada = truncarDescricao(carro.desc, 100)
+
+        carsTable += `
+        <tr>
+            <td>${carro.nome}</td>
+            <td>${carro.categoria}</td>
+            <td>${carro.desc}</td>
+        </tr>
+        `;
+    })
+
+    const htmlContent = fs.readFileSync(path.join(__dirname, '/html/todos-carros-tabela.html'), 'utf-8')
+    const finalHtml = htmlContent.replace("{{carsTable}}", carsTable)
+
+    res.send(finalHtml)
+
+
+}) 
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}/index`);
 });
