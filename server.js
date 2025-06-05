@@ -205,7 +205,7 @@ app.get('/todos-tabela', (req, res) =>{
             <td><a href="/buscar-carro/${carro.nome}">${carro.nome}</a></td>
             <td>${carro.categoria}</td>
             <td>${descricaoTruncada}</td>
-            <td><img src="${carro.urlFoto} alt="${carro.nome}" style="width: 100px;"></td>
+            <td><img src="${carro.urlFoto} alt="${carro.nome}" style="max-width: 100px;"></td>
         </tr>
         `;
     })
